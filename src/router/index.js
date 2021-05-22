@@ -53,7 +53,7 @@ router.afterEach(()=>{
 })
 
 router.beforeEach((to, from, next)=>{
-  document.title = (to.meta.title || "404") + " | JavaWebStack"
+  document.title = (to.meta.title || "404") + " | InteraApps Developers"
   next()
 })
 

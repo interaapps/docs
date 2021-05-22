@@ -111,7 +111,7 @@
         <div id="repository-list">
           <div v-for="githubRepo in githubRepos" :key="githubRepo.id" class="repository">
             <div class="top">
-              <img src="../assets/icons/repository.svg" width="16px">
+              <img src="../assets/icons/repository.svg" style="width: 16px !important">
               <h1>{{githubRepo.name}}</h1>
               <a class="stargazers" :href="githubRepo.html_url+'/stargazers'">
                 <span>{{githubRepo.stargazers_count}}</span>
