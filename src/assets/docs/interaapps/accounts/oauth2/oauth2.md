@@ -1,7 +1,7 @@
 <img src="/img/screenshots/oauth-flow.svg" alt="OAuth2 Flow" width="800"/>
 
 ## Create an OAuth2 App
-Go to [the InteraApps Develoepr Center](https://accounts.interaapps.de/developers/projects) and create a project. In it you can create your OAuth2 app. On the apps' page you get a client_id and a client_secret which you are going to need. 
+Go to [the InteraApps Developer Center](https://accounts.interaapps.de/developers/projects) and create a project. In it you can create your OAuth2 app. On the apps' page you get a client_id and a client_secret which you are going to need. 
 
 ## Authorization Grant URL
 You can create an Authorization-URL with the URL-Creator in the developer center or create it your self with the OAuth2 standard
@@ -10,7 +10,7 @@ You can create an Authorization-URL with the URL-Creator in the developer center
 Name|Description|Example
 ---|---|---
 client_id|The client_id of your app|38c54n283
-scope|A scope list seperated by a space|user.description:read user.mail:read
+scope|A scope list seperated by a space [List of scopes](/docs/accounts/permissions)|user.description:read user.mail:read
 redirect_uri|The redirect URL where the user is sent to (Default: redirecturl set in your app)|https://pastefy.ga/interaapps/callback
 state|Something that is being redirected in the url|helloapp
 
