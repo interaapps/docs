@@ -1,0 +1,12 @@
+{
+  "name": "IA-Auth",
+  "icon": "/static/accounts.png",
+  "type": "docs",
+  "index": "welcome.md",
+  "order": [
+    "welcome.md"
+  ],
+  "alt_names": {
+    "welcome.md": "Welcome"
+  }
+}

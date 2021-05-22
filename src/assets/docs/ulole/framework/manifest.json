@@ -1,0 +1,12 @@
+{
+  "name": "Framework",
+  "icon": "/static/icon.svg",
+  "type": "docs",
+  "index": "overview.md",
+  "order": [
+    "overview.md"
+  ],
+  "alt_names": {
+    "overview.md": "Overview"
+  }
+}

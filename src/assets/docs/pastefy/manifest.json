@@ -1,0 +1,20 @@
+{
+  "name": "Pastefy",
+  "icon": "/static/pastefy.png",
+  "type": "docs",
+  "index": "overview.md",
+  "order": [
+    "overview.md",
+    "getpaste.md",
+    "create_paste.md",
+    "embed.md",
+    "clients.md"
+  ],
+  "alt_names": {
+    "overview.md": "Overview",
+    "getpaste.md": "Get Paste",
+    "create_paste.md": "Create a Paste",
+    "embed.md": "Embed",
+    "clients.md": "Clients"
+  }
+}

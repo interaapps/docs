@@ -1,0 +1,7 @@
+{
+  "name": "Accounts",
+  "icon": "/static/accounts.png",
+  "type": "folder",
+  "exclude": [],
+  "static": []
+}

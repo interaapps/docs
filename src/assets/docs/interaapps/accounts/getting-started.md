@@ -1,0 +1,1 @@
+You can use InteraApps Accounts to access some of your data automaticly or authenticate people with OAuth2.

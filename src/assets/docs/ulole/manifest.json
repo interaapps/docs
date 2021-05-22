@@ -1,0 +1,7 @@
+{
+  "name": "Ulole",
+  "icon": "/static/icon.svg",
+  "type": "folder",
+  "exclude": [],
+  "static": []
+}

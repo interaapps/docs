@@ -1,0 +1,16 @@
+{
+  "name": "Cajax",
+  "icon": "/static/cajax.svg",
+  "type": "docs",
+  "index": "installation.md",
+  "order": [
+    "installation.md",
+    "basics.md",
+    "prajaxclient.md"
+  ],
+  "alt_names": {
+    "installation.md": "Installation",
+    "basics.md": "Basics",
+    "prajaxclient.md": "Prajax-Client"
+  }
+}

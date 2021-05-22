@@ -1,0 +1,15 @@
+{
+  "name": "Punyshort",
+  "icon": "/static/punyshort.svg",
+  "type": "docs",
+  "index": "overview.md",
+  "order": [
+    "overview.md"
+  ],
+  "alt_names": {
+    "overview.md": "Overview",
+    "getinformation.md": "Get link information",
+    "short.md": "Short a link",
+    "error.md": "Error Codes"
+  }
+}
