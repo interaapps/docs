@@ -8,7 +8,8 @@ If you want to get specific permissions onto any users account you can use [OAut
 
 
 ### Login with Username & Password
-You can get an Auth-Key either by logging in via the API 
+You can get an Auth-Key either by logging in via the API.
+This method is **NOT** recommended. The usage might change and this method doesn't work if 2FA or other Login-Methods are enabled.
 
 ```js
 POST https://accounts.interaapps.de/api/v2/auth/login
