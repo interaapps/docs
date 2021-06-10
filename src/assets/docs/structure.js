@@ -38,6 +38,11 @@ export default {
                             title: "OAuth2",
                             content: require("./interaapps/accounts/oauth2/oauth2.md").default
                         },
+                        {
+                            name: "using-java-library",
+                            title: "Using Java-Library",
+                            content: require("./interaapps/accounts/oauth2/using-java-library.md").default
+                        },
                     ]
                 },
             ]
