@@ -90,11 +90,6 @@ export default {
                     name: "basics",
                     title: "Getting Started",
                     content: require("./cajax/basics.md").default
-                },
-                {
-                    name: "prajaxclient",
-                    title: "Prajax-Client",
-                    content: require("./cajax/prajaxclient.md").default
                 }
             ]
         },
