@@ -82,6 +82,24 @@ html {
     }
 }
 
+pre {
+    position: relative;
+}
+
+.language-identifier {
+    position: absolute;
+    //background: #FFFFFF11;
+    color: #FFFFFF44;
+    top: 0px;
+    right: 0px;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 14px;
+    //padding: 1px 10px;
+    padding: 6px 10px;
+    border-radius: 0px 0px 0px 7px;
+    transition: 0.2s opacity;
+}
 
 @media screen and (max-width: 720px){
     #page {

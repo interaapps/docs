@@ -41,6 +41,29 @@ export default {
                         });
                     }
                 })
+
+                this.$refs.content.$el.getElementsByTagName("pre").forEach(e => {
+                    const codeElement = e.getElementsByTagName("code")[0]
+                    const doc = document.createElement("div")
+                    let lang;
+                    e.classList.forEach(clazz => {
+                        if (clazz.includes("language-"))
+                            lang = clazz.replace("language-", "").toLowerCase()
+                    })
+                    if (lang) {
+                        lang = lang.replaceAll("javascript", "js").toUpperCase()
+                        doc.innerHTML = lang
+                        doc.classList.add("language-identifier")
+                        e.insertBefore(doc, codeElement)
+                        console.log(codeElement.textContent);
+                        e.onscroll = ()=>{
+                            if (e.scrollLeft < 20)
+                                doc.style.opacity = '1'
+                            else
+                                doc.style.opacity = '0'
+                        }
+                    }
+                })
             });
         }
     }

@@ -174,15 +174,20 @@ $jdomSetter("innerHTML");
 // creates the method setInnerHTML() [Usage: $(".element").setInnerHTML("Hello") ]
 
 ```
+<br><br>
+<iframe style="border: 2px solid #00000011; border-radius: 10px" width="100%" height="300" src="//jsfiddle.net/JulianFun123/gsh1vdkn/embedded/html,result/?accentColor=4542f4&fontColor=4542f4" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+<br><br>
 
 ### More
 
 #### Cajax example (Ajax)
 [You need Cajax.js for this example. (Click here)](https://github.com/interaapps/cajax)
 ```javascript
-Cajax.get("/api/getWeather", {
+new Cajax().get("/api/getWeather", {
     zipcode: 97201
-}).then(function(resp) {
-    $("#weather-temp").html("<strong>" + resp.responseText + "</strong> degrees");
-}).send();
+})
+    .then(res=>res.text())
+    .then(function(res) {
+        $("#weather-temp").html("<strong>" + res + "</strong> degrees");
+    }).send();
 ```
