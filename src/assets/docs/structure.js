@@ -57,7 +57,8 @@ export default {
                     title: "Api V2",
                     content: require("./pastefy/apiv2.md").default
                 }
-            ]
+            ],
+            github: 'interaapps/pastefy'
         },
         {
             name: "punyshort",
@@ -79,7 +80,8 @@ export default {
                     title: "Error-Codes",
                     content: require("./punyshort/error.md").default
                 }
-            ]
+            ],
+            github: 'interaapps/punyshort'
         },
         {
             name: "cajax",
@@ -91,7 +93,8 @@ export default {
                     title: "Getting Started",
                     content: require("./cajax/basics.md").default
                 }
-            ]
+            ],
+            github: 'interaapps/cajax'
         },
         {
             name: "jdom",

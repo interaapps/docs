@@ -1,12 +1,5 @@
 @import './inter.scss', "./highlight.scss";
 
-* {
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
-    font-family: inter, sans-serif;
-}
-
 html {
     scroll-behavior: smooth;
 }
@@ -30,8 +23,8 @@ html {
 
     code {
         background: #262B390F;
-        border-radius: 5px;
-        padding: 0px 4px;
+        border-radius: 6px;
+        padding: 0px 8px;
     }
 
     code pre {

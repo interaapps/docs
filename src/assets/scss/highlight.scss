@@ -38,7 +38,7 @@
 	 padding: 20px;
 	 margin: 10px 0;
 	 overflow: auto;
-	 border-radius: 0.3em;
+	 border-radius: 10px;
  }
  
  :not(pre) > code[class*="language-"],
@@ -49,7 +49,7 @@
  /* Inline code */
  :not(pre) > code[class*="language-"] {
 	 padding: .1em;
-	 border-radius: .3em;
+	 border-radius: 10px;
 	 white-space: normal;
  }
  

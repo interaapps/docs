@@ -1,8 +1,15 @@
 <template>
-  <div class="home">
-    <div id="top">
-      <h1>EXTEND YOUR WONDERFUL APPS WITH OURS</h1>
-    </div>
+  <div class="contents">
+    <div id="big-title">
+        <h1>
+          Developers
+        </h1>
+        <div>
+          <a class="button" href="#libraries">Libraries</a>
+          <a class="button" href="#github-repos">Github Repos</a>
+          <a class="button" href="#we-contributed-to">Our Contributions</a>
+        </div>
+      </div>
 
     <div id="example">
       <div id="docs">
@@ -43,7 +50,7 @@
             </div>
           </div>
         </div>
-        <h1>Libraries</h1>
+        <h1 id="libraries">Libraries</h1>
         <div class="repository-list">
           <!---->
           <div class="repository">
@@ -155,8 +162,8 @@
           </div>
         </div>
 
-        <h1>GitHub Repositories</h1>
-        <div id="repository-list">
+        <h1 id="github-repos">GitHub Repositories</h1>
+        <div class="repository-list">
           <div v-for="githubRepo in githubRepos" :key="githubRepo.id" class="repository">
             <div class="top">
               <img src="../assets/icons/repository.svg" style="width: 16px !important">
@@ -175,7 +182,7 @@
             </div>
           </div>
         </div>
-        <h1>We contributed in and use</h1>
+        <h1 id="we-contributed-to">We contributed in and use</h1>
         <div class="repository-list">
           <!---->
           <div class="repository">
@@ -230,7 +237,7 @@ export default {
 
 #example {
   width: 100%;
-  margin-top: 200px;
+  margin-top: 100px;
   margin-bottom: 100px;
   #description {
     width: 47%;
@@ -275,18 +282,19 @@ export default {
   }
 
   .repository-list {
+    text-align: center;
     margin: auto;
-    width: fit-content;
   }
 
   .repository {
+    text-align: left;
     display: inline-block;
     text-decoration: none;
     color: #545454;
     border-radius: 10px;
     border: 2px #CCCCCC solid;
     padding: 8px;
-    width: 376px;
+    width: calc(33% - 6px);
     max-width: 100%;
     vertical-align: top;
     margin: 5px;
@@ -432,33 +440,9 @@ export default {
 }
 
 @media screen and (max-width: 720px){
-  #top {
-    max-width: 100%;
-    width: 100%;
-    margin: auto;
-    margin-top: 130px;
-    h1 {
-      font-size: 50px;
-      margin-bottom: 20px;
-      color: #323232;
-      text-align: center;
-    }
-    .links {
-      text-align: center;
-      margin-top: 50px;
-    }
-    svg {
-      margin-top: 30px;
-      margin-bottom: 80px;
-      position: static;
-      float: right;
-      width: 150px;
-      height: 150px;
-    }
-  }
   #example {
   width: 100%;
-  margin-top: 200px;
+  margin-top: 100px;
   margin-bottom: 100px;
   #description {
     width: 100%;
@@ -468,13 +452,12 @@ export default {
   }
 
 
-  #repositories {
-    .repository {
-      width: 100%;
-      display: block;
-    }
+  .repository {
+    width: 100%;
+    display: block;
+    margin-left: 0px;
   }
-
+  
   #code-block {
     float: none;
     width: 100%;

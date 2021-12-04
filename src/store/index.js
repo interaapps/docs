@@ -5,7 +5,11 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    state:{
+    navTitle: "Developers",
+    auth: {
+      loggedIn: false,
+      user: null,
+      loading: true
     }
   },
   mutations: {
