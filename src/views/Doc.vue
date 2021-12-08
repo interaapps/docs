@@ -89,9 +89,9 @@ export default {
     vertical-align: top;
 
     #docs-sidenav-contents {
-        padding: 10px 0px;
+        padding: 13px 0px;
         border: 2px solid #00000005;
-        border-radius: 8px;
+        border-radius: 12px;
         background: #f3f3f3aa;
         backdrop-filter: blur(8px);
         margin-bottom: 16px;
@@ -110,11 +110,14 @@ export default {
     vertical-align: top;
     display: inline-block;
 
-    width: calc(100% - 300px); 
+    width: calc(100% - 320px);
+    margin-left: 20px; 
     padding: 30px;
-    padding-top: 0px;
     overflow: hidden;
     word-break: break-word;
+
+    border: #EEE solid 2px;
+    border-radius: 12px;
 }
 #doc-title {
     font-size: 44px;

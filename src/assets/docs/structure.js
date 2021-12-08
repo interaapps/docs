@@ -25,7 +25,7 @@ export default {
                 },
                 {
                     name: "header",
-                    title: "X-Auth-Key Header",
+                    title: "Authorization",
                     content: require("./interaapps/accounts/header.md").default
                 },
                 {
@@ -95,6 +95,19 @@ export default {
                 }
             ],
             github: 'interaapps/cajax'
+        },
+        {
+            name: "ping",
+            title: "Ping",
+            content: require("./ping/basics.md").default,
+            children: [
+                /*{
+                    name: "basics",
+                    title: "Getting Started",
+                    content: require("./cajax/basics.md").default
+                }*/
+            ],
+            github: 'interaapps/ping.intera.dev'
         },
         {
             name: "jdom",

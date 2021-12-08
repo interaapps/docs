@@ -13,6 +13,16 @@ const routes = [
       title: "Homepage"
     },
     component: Home
+  },
+  {
+    path: '/cajax',
+    name: 'Cajax',
+    component: ()=>import("@/views/pages/Cajax")
+  },
+  {
+    path: '/ping',
+    name: 'Ping',
+    component: ()=>import("@/views/pages/Ping")
   }
 ]
 

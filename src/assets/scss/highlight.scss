@@ -6,6 +6,11 @@
 
  $highlight-background: rgb(38, 43, 57);
 
+
+code[class*="language-"] {
+	padding: 0px !important;
+}
+
  code[class*="language-"],
  pre[class*="language-"] {
 	 color: #f8f8f2;

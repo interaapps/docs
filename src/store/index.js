@@ -5,7 +5,7 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    navTitle: "Developers",
+    navTitle: "intera.dev",
     auth: {
       loggedIn: false,
       user: null,

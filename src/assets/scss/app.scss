@@ -1,7 +1,21 @@
 @import './inter.scss', "./highlight.scss";
 
+* {
+    font-family: 'DM Sans', sans-serif;
+}
+
+#navigation #logo span {
+    font-family:  'DM Mono' !important;
+}
+
+
 html {
     scroll-behavior: smooth;
+}
+
+.big-code-sample {
+    float: right;
+    display: inline-block;
 }
 
 #page {
@@ -32,11 +46,23 @@ html {
     }
 
     h1, h2, h3 {
-        border-bottom: 1.3px #CCC solid;
-        padding-bottom: 10px;
-        margin-bottom: 20px;
-        margin-top: 20px;
         color: #323232;
+    }
+
+    h1 {
+        padding: 26px 0px 25px 0px;
+    }
+    h2 {
+        padding: 21px 0px 13px 0px;
+    }
+    h3 {
+        padding: 19px 0px 7px 0px;
+    }
+    h4 {
+        padding: 19px 0px 13px 0px;
+    }
+    h5 {
+        padding: 17px 0px 11px 0px;
     }
 
     img {
