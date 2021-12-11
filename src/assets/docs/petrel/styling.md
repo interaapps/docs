@@ -1,0 +1,1 @@
+For the layout you might look into the [css/base.css](ExampleAutoCompletion) and import it in your css file. If you want a idea for how you can style it, you might look into one of our themes. For example our dark theme [css/dark.css](https://github.com/interaapps/Petrel/blob/master/css/dark.css)

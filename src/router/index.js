@@ -23,6 +23,11 @@ const routes = [
     path: '/ping',
     name: 'Ping',
     component: ()=>import("@/views/pages/Ping")
+  },
+  {
+    path: '/petrel',
+    name: 'Petrel',
+    component: ()=>import("@/views/pages/Petrel")
   }
 ]
 

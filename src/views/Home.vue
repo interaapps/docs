@@ -205,7 +205,7 @@
 </template>
 
 <script>
-import { Prajax } from "cajaxjs";
+import { Cajax } from "cajaxjs";
 
 export default {
   name: 'Home',
@@ -213,7 +213,7 @@ export default {
     githubRepos: []
   }),
   mounted(){
-    Prajax.get("https://api.github.com/orgs/interaapps/repos")
+    (new Cajax).get("https://api.github.com/orgs/interaapps/repos")
       .then(res => this.githubRepos = res.json())
   },
   components: {

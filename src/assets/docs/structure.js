@@ -101,14 +101,10 @@ export default {
             title: "Ping",
             content: require("./ping/basics.md").default,
             children: [
-                /*{
-                    name: "basics",
-                    title: "Getting Started",
-                    content: require("./cajax/basics.md").default
-                }*/
             ],
             github: 'interaapps/ping.intera.dev'
         },
+        require('./petrel/structure.js').default,
         {
             name: "jdom",
             title: "Jdom",

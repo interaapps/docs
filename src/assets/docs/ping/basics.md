@@ -1,5 +1,5 @@
 
-ping.intera.dev is an http testing Tool.<br> It will give you your http request as a json object.<br>There are also more tools which help you having fun with http!
+ping.intera.dev is a http testing Tool.<br> It will give you your http request as a json object.<br>There are also more tools which help you having fun with http!
 
 ## Domains
 There are two testing domains:

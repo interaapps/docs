@@ -19,6 +19,9 @@
 <script>
 import VueMarkdown from 'vue-markdown'
 import Prism from 'prismjs';
+import { Cajax } from 'cajaxjs';
+import { CodeEditor, JavaScriptAutoComplete, PHPAutoComplete } from 'petrel'
+
 require('prismjs/components/prism-markup-templating')
 require('prismjs/components/prism-java')
 require('prismjs/components/prism-javascript')
@@ -26,6 +29,8 @@ require('prismjs/components/prism-json')
 require('prismjs/components/prism-php')
 require('prismjs/components/prism-bash')
 require('prismjs/components/prism-python')
+require('prismjs/components/prism-markup')
+require('prismjs/components/prism-css')
 
 
 import structure from "../assets/docs/structure.js";
@@ -73,6 +78,31 @@ export default {
                                 doc.style.opacity = '0'
                         }
                     }
+                })
+
+                this.$refs.content.$el.getElementsByTagName("code-editor").forEach(async e => {
+                    e.style.display = "block"
+                    let value = "";
+                    if (e.hasAttribute('value')) {
+                        value = e.getAttribute('value')
+                    } else if (e.hasAttribute('paste')) {
+                        value = await (new Cajax('https://pastefy.ga/api/v2')).get(`/paste/${e.getAttribute('paste')}`).then(res=>res.json()).then(res=>res.content)
+                    }
+                    const codeEditor = new CodeEditor(e)
+                        .setValue(value)
+
+                    if (e.hasAttribute('lang'))
+                        codeEditor.setHighlighter(c => Prism.highlight(c, Prism.languages[e.getAttribute('lang')]))
+
+                    if (e.getAttribute('lang') == 'javascript'){
+                        codeEditor.setAutoCompleteHandler(new JavaScriptAutoComplete())
+                    } else if (e.getAttribute('lang') == 'php'){
+                        codeEditor.setAutoCompleteHandler(new PHPAutoComplete())
+                    }
+                    if (e.hasAttribute('readonly'))
+                        codeEditor.readonly = true
+
+                    codeEditor.create()
                 })
             });
         }
