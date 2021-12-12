@@ -25,6 +25,18 @@ function test(){
     echo $helloWorld
 }
 test()"></code-editor>
+### Java
+```js
+import { JavaAutoComplete } from  'petrel'
+
+codeEditor.setAutoCompleteHandler(new JavaAutoComplete())
+```
+<code-editor style="min-height: 250px" lang="java" value="class Test {
+    public String hey;
+    public String printHey(){
+        System.out.println(hey);
+    }
+}"></code-editor>
 
 ## Creating autocompletion
 <code-editor style="min-height: 250px" lang="javascript" paste="uEf3NMfe"></code-editor>

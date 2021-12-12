@@ -36,7 +36,7 @@ const HTML_EDITOR_CODE = `<!-- index.html -->
     <!-- with npm and webpack 
         require('petrel/css/dark.css')
         -->
-    <link rel="stylesheet" href="https://js.intera.dev/petrel/1.0.4/css/dark.css">
+    <link rel="stylesheet" href="https://js.intera.dev/petrel/1.0.6/css/dark.css">
 </head>
 <body>
     <div id="my-editor"></div>
@@ -45,7 +45,7 @@ const HTML_EDITOR_CODE = `<!-- index.html -->
 
 const FIRST_EDITOR_CODE =
 `// create-editor.js
-import { CodeEditor, JavaScriptAutoComplete } from 'https://js.intera.dev/petrel/1.0.4/index.js'
+import { CodeEditor, JavaScriptAutoComplete } from 'https://js.intera.dev/petrel/1.0.6/index.js'
 
 const codeEditor = new CodeEditor(document.getElementById('my-editor'))
 

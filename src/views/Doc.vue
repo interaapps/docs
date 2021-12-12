@@ -20,7 +20,7 @@
 import VueMarkdown from 'vue-markdown'
 import Prism from 'prismjs';
 import { Cajax } from 'cajaxjs';
-import { CodeEditor, JavaScriptAutoComplete, PHPAutoComplete } from 'petrel'
+import { CodeEditor, JavaScriptAutoComplete, PHPAutoComplete, JavaAutoComplete } from 'petrel'
 
 require('prismjs/components/prism-markup-templating')
 require('prismjs/components/prism-java')
@@ -98,6 +98,8 @@ export default {
                         codeEditor.setAutoCompleteHandler(new JavaScriptAutoComplete())
                     } else if (e.getAttribute('lang') == 'php'){
                         codeEditor.setAutoCompleteHandler(new PHPAutoComplete())
+                    } else if (e.getAttribute('lang') == 'java'){
+                        codeEditor.setAutoCompleteHandler(new JavaAutoComplete())
                     }
                     if (e.hasAttribute('readonly'))
                         codeEditor.readonly = true

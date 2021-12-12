@@ -6,11 +6,11 @@ import { CodeEditor } from 'petrel'
 ```
 ## Module
 ```js
-import { CodeEditor } from 'https://js.intera.dev/petrel/1.0.4/index.js'
+import { CodeEditor } from 'https://js.intera.dev/petrel/1.0.6/index.js'
 ```
 ## JS
 ```html
-<script src='https://js.intera.dev/petrel/1.0.4.js'></script>
+<script src='https://js.intera.dev/petrel/1.0.6.js'></script>
 ```
 # Styles
 ## NPM & Webpack
@@ -19,5 +19,5 @@ require('petrel/css/dark.css')
 ```
 ## Web
 ```html
-<link rel="stylesheet" href="https://js.intera.dev/petrel/1.0.4/css/dark.css">
+<link rel="stylesheet" href="https://js.intera.dev/petrel/1.0.6/css/dark.css">
 ```

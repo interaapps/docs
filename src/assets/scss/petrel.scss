@@ -3,12 +3,11 @@
     overflow-x: auto;
     position: relative;
     font-family: monospace;
-    * {
-        line-height: inherit;
-        font-family: inherit;
-    }
 }
-
+.petrel-code-editor * {
+    font-family: inherit;
+    line-height: inherit;
+}
 .petrel-code-editor textarea {
     padding: 0px;
     margin: 0px;
@@ -101,6 +100,13 @@
 
 .petrel-code-editor .petrel-code-editor-autocompletion a.selected {
     background: #00000022;
+}
+.petrel-code-editor .petrel-code-editor-autocompletion a span {
+    position: absolute;
+    right: 10px;
+    opacity: 0.6;
+    text-transform: lowercase;
+    margin-left: 15px;
 }
 
 .petrel-code-editor {

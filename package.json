@@ -10,7 +10,7 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "interaappswebsite": "git+https://github.com/interaapps/website.git",
-    "petrel": "^1.0.4",
+    "petrel": "^1.0.6",
     "prismjs": "^1.22.0",
     "register-service-worker": "^1.7.1",
     "vue": "^2.6.11",
