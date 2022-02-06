@@ -79,13 +79,24 @@ html {
         margin-left: 24px;
     }
 
+    hr {
+        border: 1px solid #DDD;
+        margin-top: 50px;
+        margin-bottom: 20px;
+        display: block;
+    }
+
     table {
         border-spacing: 0px;
         margin-bottom: 10px;
+        th {
+            text-align: left;
+        }
         th, tr, td {
+            font-size: 18px;
             margin: 0px;
-            padding: 7px;
-            border: rgb(150, 150, 150) solid 1px;
+            padding: 3px 7px;
+            border: rgb(230, 230, 230) solid 1px;
         }
     }
 
@@ -118,6 +129,27 @@ pre {
     padding: 6px 10px;
     border-radius: 0px 0px 0px 7px;
     transition: 0.2s opacity;
+}
+
+req-method {
+    color:      #3330fc;
+    background: #3330fc27;
+    font-size: 19px;
+    padding: 4px 10px;
+    border-radius: 10px;
+    margin-right: 10px;
+    &.DELETE {
+        color:     #EE3333;
+        background: #EE333327;
+    }
+    &.POST {
+        color:      #33EE33;
+        background: #33EE3327;
+    }
+    &.PUT {
+        color:      #eea333;
+        background: #eea33327;
+    }
 }
 
 @media screen and (max-width: 720px){

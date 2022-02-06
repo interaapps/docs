@@ -53,9 +53,10 @@ export default {
             content: require("./pastefy/overview.md").default,
             children: [
                 {
-                    name: "api-v2",
+                    name: "spec",
                     title: "Api V2",
-                    content: require("./pastefy/apiv2.md").default
+                    type: "spec",
+                    content: require("./pastefy/api_spec.js").default
                 }
             ],
             github: 'interaapps/pastefy'
