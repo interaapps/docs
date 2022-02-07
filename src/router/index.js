@@ -66,7 +66,7 @@ function createTableFromSpec(obj, jsonable = false){
 function walkStructure(basePath, structure) {
   if(structure.content !== undefined){
     let title = structure.title
-    let content = ''
+    let content = structure.content
 
     if (structure.type == 'spec') {
       const spec = structure.content
