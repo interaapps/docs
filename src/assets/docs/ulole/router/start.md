@@ -11,11 +11,18 @@ $router->get("/(d+)", function (Request $req, Response $res, int $userId) {
     return "Your Id: " . $userId . "!";
 });
 
-$router->addRoute("/multiple/http/methods", "GET|POST|PUT", myFunction(...));
-
 $router->notFound(function (Request $req, Response $res) {
     return "This page was not found!";
 });
+
+// Using functions with the new PHP8.1 syntax (the three dots need to be there)
+$router->get("", myFunction(...));
+$router->get("", MyClass::myMethod(...));
+$router->get("", $myObject->myMethod(...));
+
+
+// Multiple HTTP-Methods
+$router->addRoute("/multiple", "GET|POST|PUT", myFunction(...));
 
 // Runs the router
 $router->run();

@@ -1,5 +1,5 @@
 ## Receive and return JSON
-deverm-router uses JSONPlus in the background so you can receive and return json easily.
+Deverm-router uses JSONPlus in the background so you can receive and return JSON easily.
 
 ```php
 class UserCreateRequest {
