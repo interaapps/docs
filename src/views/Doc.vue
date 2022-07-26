@@ -20,7 +20,7 @@
 import VueMarkdown from 'vue-markdown'
 import Prism from 'prismjs';
 import { Cajax } from 'cajaxjs';
-import { CodeEditor, JavaScriptAutoComplete, PHPAutoComplete, JavaAutoComplete } from 'petrel'
+import { CodeEditor } from 'petrel'
 
 require('prismjs/components/prism-markup-templating')
 require('prismjs/components/prism-java')
@@ -32,6 +32,18 @@ require('prismjs/components/prism-python')
 require('prismjs/components/prism-markup')
 require('prismjs/components/prism-css')
 
+const AUTOCOMPLETIONS = [
+    {language: "javascript", file: "JavaScriptAutoComplete"},
+    {language: "dockerfile", file: "DockerfileAutoComplete"},
+    {language: "html", file: "HTMLAutoComplete"},
+    {language: "json", file: "JSONAutoComplete"},
+    {language: "java", file: "JavaAutoComplete"},
+    {language: "markdown", file: "MarkdownAutoComplete"},
+    {language: "php", file: "PHPAutoComplete"},
+    {language: "sql", file: "SQLAutoComplete"},
+    {language: "xml", file: "XMLAutoComplete"},
+    {language: "yaml", file: "YAMLAutoComplete"},
+]
 
 import structure from "../assets/docs/structure.js";
 import DocsNav from '../components/DocsNav'
@@ -94,13 +106,14 @@ export default {
                     if (e.hasAttribute('lang'))
                         codeEditor.setHighlighter(c => Prism.highlight(c, Prism.languages[e.getAttribute('lang')]))
 
-                    if (e.getAttribute('lang') == 'javascript'){
-                        codeEditor.setAutoCompleteHandler(new JavaScriptAutoComplete())
-                    } else if (e.getAttribute('lang') == 'php'){
-                        codeEditor.setAutoCompleteHandler(new PHPAutoComplete())
-                    } else if (e.getAttribute('lang') == 'java'){
-                        codeEditor.setAutoCompleteHandler(new JavaAutoComplete())
+                    for (const autocompletion of AUTOCOMPLETIONS) {
+                        if (autocompletion.language == e.getAttribute('lang')) {
+                            (async () => {
+                                codeEditor.setAutoCompleteHandler(new (await import(`petrel/src/languages/${autocompletion.file}.js`)).default())
+                            })()
+                        }
                     }
+
                     if (e.hasAttribute('readonly'))
                         codeEditor.readonly = true
 
@@ -152,7 +165,7 @@ export default {
     border-radius: 12px;
 }
 #doc-title {
-    font-size: 44px;
+    font-size: 36px;
     font-weight: 600;
     color: #434343;
     margin-bottom: 25px;

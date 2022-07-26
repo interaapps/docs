@@ -61,6 +61,7 @@ export default {
             ],
             github: 'interaapps/pastefy'
         },
+        require("./ulole/structure").default,
         {
             name: "punyshort",
             title: "Punyshort",

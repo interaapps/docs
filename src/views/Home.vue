@@ -292,7 +292,7 @@ export default {
     text-decoration: none;
     color: #545454;
     border-radius: 10px;
-    border: 2px #CCCCCC solid;
+    border: 2px rgb(235, 235, 235) solid;
     padding: 8px;
     width: calc(33% - 6px);
     max-width: 100%;

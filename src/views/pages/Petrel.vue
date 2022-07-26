@@ -23,7 +23,8 @@
     </div>
 </template>
 <script>
-import { CodeEditor, JavaScriptAutoComplete } from 'petrel'
+import { CodeEditor } from 'petrel'
+import JavaScriptAutoComplete from 'petrel/src/languages/JavaScriptAutoComplete' 
 
 require('prismjs/components/prism-http')
 
@@ -45,7 +46,8 @@ const HTML_EDITOR_CODE = `<!-- index.html -->
 
 const FIRST_EDITOR_CODE =
 `// create-editor.js
-import { CodeEditor, JavaScriptAutoComplete } from 'https://js.intera.dev/petrel/1.0.6/index.js'
+import { CodeEditor } from 'https://js.intera.dev/petrel/1.0.6/index.js'
+import JavaScriptAutoComplete from 'petrel/src/languages/JavaScriptAutoComplete'
 
 const codeEditor = new CodeEditor(document.getElementById('my-editor'))
 

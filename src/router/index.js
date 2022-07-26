@@ -28,6 +28,11 @@ const routes = [
     path: '/petrel',
     name: 'Petrel',
     component: ()=>import("@/views/pages/Petrel")
+  },
+  {
+    path: '/ulole',
+    name: 'Ulole',
+    component: ()=>import("@/views/pages/ulole/Framework")
   }
 ]
 
@@ -70,6 +75,7 @@ function walkStructure(basePath, structure) {
 
     if (structure.type == 'spec') {
       const spec = structure.content
+      content = ''
       
       const links = {}
       let linksIndex = 0
