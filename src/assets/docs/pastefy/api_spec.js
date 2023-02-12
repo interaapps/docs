@@ -27,7 +27,8 @@ const paste = {
     "encrypted": {type: 'boolean', description: '', example: ''},
     "exists": {type: 'boolean', description: '', example: true},
     "raw_url": {type: 'string', description: '', example: "/X2VuN8r2/raw"},
-    "created": {type: 'string', description: '', example: "2022-02-01 16:03:09.0"},
+    "created_at": {type: 'string', description: '', example: "2022-02-01 16:03:09.0"},
+    "expire_at": {type: 'string', description: '', example: null},
     "user_id": {type: 'string', description: '', example: ''},
 }
 
@@ -41,13 +42,17 @@ const paste_create = {
     "type": {type: 'enum', description: '', values: ["PASTE", "MULTI_PASTE"], example: 'PASTE'},
     "title": {type: 'string', description: '', example: 'test.js', required},
     "content": {type: 'string', description: '', example: 'console.log("Hello World")', required},
+    "visibility": {type: 'enum', description: 'UNLISTED is default', values: ["UNLISTED", "PUBLIC", "PRIVATE"], example: 'UNLISTED'},
     "encrypted": {type: 'boolean', description: '', example: ''},
+    "expire_at": {type: 'string', description: 'optional. null for no expiration', example: "2022-02-01 16:03:09.0"}
 }
 
 const paste_edit = {
     "type": paste_create.type,
     "title": {...paste_create.title, required: false},
     "content": {...paste_create.content, required: false},
+    "visibility": {...paste_create.visibility, required: false},
+    "expire_at": {...paste_create.expire_at, required: false},
     "encrypted": paste_create.encrypted,
 }
 
@@ -64,7 +69,7 @@ const folder = {
 	"children": arrayOf(folder_type, []),
 	"exists": paste.exists,
 	"pastes": arrayOf(paste_type, [{...paste}]),
-    "created_at": paste.created
+    "created_at": paste.created_at
 }
 
 const notification = {
@@ -74,8 +79,8 @@ const notification = {
     "user_id":paste.user_id,
     "already_read":{type: 'boolean', description: '', example: "false"},
     "received":{type: 'boolean', description: '', example: "false"},
-    "created_at":paste.created,
-    "updated_at":paste.created
+    "created_at":paste.created_at,
+    "updated_at":paste.created_at
 }
 
 notification;
@@ -136,7 +141,8 @@ export default {
             url: "/api/v2/paste/:id",
             method: "DELETE",
             response: {success},
-            headers: fDH()
+            middleware: ["auth"],
+            headers: fDH({Authorization})
         },
 
         "Folder",
@@ -192,6 +198,54 @@ export default {
             headers: fDH({Authorization})
         },
 
+
+        "Public Pastes",
+        {
+            name: "Get all public pastes",
+            url: "/api/v2/public-pastes",
+            method: "GET",
+            query: {
+                page: {type: 'string', description: 'Page', example: ""}, 
+                page_size: {type: 'string', description: 'Page size', example: ""}, 
+                search: {type: 'string', description: 'Search query', example: ""}, 
+                shorten_content: {type: 'string', description: 'If true shorten the paste contents', example: ""}
+            },
+            response: {
+                '$root': arrayOf(paste_type, [{...paste}])
+            },
+            headers: fDH()
+        },
+        {
+            name: "Get trending",
+            url: "/api/v2/public-pastes/trending",
+            method: "GET",
+            query: {
+                page: {type: 'string', description: 'Page', example: ""}, 
+                page_size: {type: 'string', description: 'Page size', example: ""}, 
+                trending: {type: 'string', description: 'If true limit pastes to lately treding', example: ""}, 
+                shorten_content: {type: 'string', description: 'If true shorten the paste contents', example: ""}
+            },
+            response: {
+                '$root': arrayOf(paste_type, [{...paste}])
+            },
+            headers: fDH()
+        },
+        {
+            name: "Get latest",
+            url: "/api/v2/public-pastes/trending",
+            method: "GET",
+            query: {
+                page: {type: 'string', description: 'Page', example: ""}, 
+                page_size: {type: 'string', description: 'Page size', example: ""}, 
+                shorten_content: {type: 'string', description: 'If true shorten the paste contents', example: ""}
+            },
+            response: {
+                '$root': arrayOf(paste_type, [{...paste}])
+            },
+            headers: fDH()
+        },
+
+        "Folder",
 
         {
             name: "Get notifications",

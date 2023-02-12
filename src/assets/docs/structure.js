@@ -45,6 +45,11 @@ export default {
                         },
                     ]
                 },
+                {
+                    name: "app-access",
+                    title: "IA External Access",
+                    content: require("./interaapps/accounts/app_access.md").default
+                },
             ]
         },
         {
@@ -62,29 +67,7 @@ export default {
             github: 'interaapps/pastefy'
         },
         require("./ulole/structure").default,
-        {
-            name: "punyshort",
-            title: "Punyshort",
-            content: require("./punyshort/overview.md").default,
-            children: [
-                {
-                    name: "short",
-                    title: "Shorten a link",
-                    content: require("./punyshort/short.md").default
-                },
-                {
-                    name: "getinformation",
-                    title: "Get Link Information",
-                    content: require("./punyshort/getinformation.md").default
-                },
-                {
-                    name: "error",
-                    title: "Error-Codes",
-                    content: require("./punyshort/error.md").default
-                }
-            ],
-            github: 'interaapps/punyshort'
-        },
+        require("./punyshort/structure").default,
         {
             name: "cajax",
             title: "Cajax",

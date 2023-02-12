@@ -40,13 +40,37 @@
           <!---->
           <div class="repository">
             <div class="top">
-              <img src="https://cdn.interaapps.de/icon/interaapps/punyshort.svg">
+              <img src="https://www.punyshort.ga/favicon.ico">
               <h1>Punyshort</h1>
             </div>
             <p>Punyshort is an URL-Shortener with an API which allows you to access statistics or create an shortened link</p>
             <div class="buttons">
               <a href="https://github.com/interaapps/punyshort" target="_blank">GitHub</a>
               <router-link to="/docs/punyshort">Docs</router-link>
+            </div>
+          </div>
+          <!---->
+          <div class="repository">
+            <div class="top">
+              <img src="https://quotysco.eu/img/icons/icon196x.png">
+              <h1>Quotysco</h1>
+            </div>
+            <p>Quotysco is a blogging platform. You can create blogs, post content, follow and like blogs with our open api.</p>
+            <div class="buttons">
+              <a href="hhttps://github.com/interaapps/quotysco" target="_blank">GitHub</a>
+              <a href="https://github.com/interaapps/quotysco/tree/master/backend/src/main/java/de/interaapps/quotysco/backend/controller">Docs</a>
+            </div>
+          </div>
+          <!---->
+          <div class="repository">
+            <div class="top">
+              <img src="https://cdn.interaapps.de/icon/interaapps/passwords.svg">
+              <h1>Passwords</h1>
+            </div>
+            <p>InteraApps Passwords is a Password Manager with which you can store passwords securely and access them with one master password.</p>
+            <div class="buttons">
+              <a href="https://github.com/interaapps/passwords-backend" target="_blank">GitHub</a>
+              <a href="https://github.com/interaapps/passwords-java-client#readme" target="_blank">Java Api Client</a>
             </div>
           </div>
         </div>
@@ -187,7 +211,7 @@
           <!---->
           <div class="repository">
             <div class="top">
-              <img src="https://javawebstack.org/assets/img/icon-dark.svg">
+              <img src="https://avatars.githubusercontent.com/u/73674659?s=200&v=4">
               <h1>JavaWebStack</h1>
             </div>
             <p>JWS allows you to create a Java Web-Application with ease in a few minutes. IA is using it for nearly everything</p>
@@ -214,7 +238,7 @@ export default {
   }),
   mounted(){
     (new Cajax).get("https://api.github.com/orgs/interaapps/repos")
-      .then(res => this.githubRepos = res.json())
+      .then(async res => this.githubRepos = await res.json())
   },
   components: {
   }
@@ -276,14 +300,13 @@ export default {
   h1 {
     text-align: center;
     font-size: 40px;
-    color: #545454;
-    margin-bottom: 50px;
-    margin-top: 40px;
+    color: #323232;
+    margin-bottom: 30px;
+    margin-top: 60px;
   }
 
   .repository-list {
-    text-align: center;
-    margin: auto;
+    margin: 0 -1%;
   }
 
   .repository {
@@ -292,9 +315,10 @@ export default {
     text-decoration: none;
     color: #545454;
     border-radius: 10px;
-    border: 2px rgb(235, 235, 235) solid;
-    padding: 8px;
-    width: calc(33% - 6px);
+    border: 2px #00000011 solid;
+    padding: 14px;
+    margin: 1%;
+    width: calc(32%);
     max-width: 100%;
     vertical-align: top;
     margin: 5px;
@@ -314,7 +338,7 @@ export default {
         margin-left: 10px;
         margin-bottom: 0px;
         margin-top: 0px;
-        color: #747474;
+        color: #434343;
       }
       .stargazers {
         display: inline-block;
@@ -439,7 +463,7 @@ export default {
   }
 }
 
-@media screen and (max-width: 720px){
+@media screen and (max-width: 800px){
   #example {
   width: 100%;
   margin-top: 100px;

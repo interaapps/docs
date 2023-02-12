@@ -42,7 +42,7 @@ let tableIndex = 0
 function createTableFromSpec(obj, jsonable = false){
   let table = 'key|type|description|example\n'
              +'---|---|---|---\n'
-  console.log(obj);
+
   for (const key in obj) {
     const struct = obj[key]
 
